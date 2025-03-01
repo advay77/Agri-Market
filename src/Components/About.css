@@ -1,0 +1,179 @@
+/* Container animations and styling */
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(139, 69, 19, 0.2);
+}
+
+.about-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Title styling */
+.about-title {
+  font-size: 3.5rem;
+  color: #2a1e00;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+  font-family: "Playfair Display", serif;
+}
+
+.about-subtitle {
+  font-size: 1.25rem;
+  color: #4a3500;
+  text-align: center;
+  margin-bottom: 4rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  font-family: "Merriweather", serif;
+}
+
+/* Accordion styling */
+.accordion {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 248, 220, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(139, 69, 19, 0.25);
+  border: 2px solid #d2b48c;
+  webkit-backdrop-filter: blur(8px);
+}
+
+.accordion-item {
+  border-bottom: 2px solid #d2b48c;
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #4a3500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Merriweather", serif;
+}
+
+.accordion-header:hover {
+  background-color: rgba(210, 180, 140, 0.3);
+}
+
+.accordion-icon {
+  font-size: 1rem;
+  color: #8b4513;
+  transition: transform 0.3s ease;
+}
+
+.accordion-icon.open {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  background-color: rgba(255, 248, 220, 0.5);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-top: 1px solid #d2b48c;
+}
+
+.accordion-content-inner {
+  padding: 1.5rem 2rem;
+  color: #4a3500;
+  line-height: 1.8;
+  font-weight: 500;
+  font-family: "Lato", sans-serif;
+}
+
+/* List styling */
+.accordion-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.accordion-content li {
+  padding: 0.75rem 0;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.accordion-content li::before {
+  content: "🌾";
+  position: absolute;
+  left: 0;
+  font-size: 1rem;
+}
+
+/* Contact section specific styling */
+.accordion-content p {
+  margin-bottom: 1.5rem;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4e8d1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8b4513;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b4e00;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 2rem 1rem;
+    margin: 1rem;
+  }
+
+  .about-title {
+    font-size: 2.5rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+
+  .accordion-header {
+    padding: 1.25rem 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .accordion-content-inner {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
